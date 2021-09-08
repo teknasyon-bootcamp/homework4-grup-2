@@ -1,5 +1,8 @@
 <?php
-require_once 'db.class.php';
 
-$deneme = new db;
-echo $deneme->connect();
+require_once 'post.class.php';
+
+
+
+$deneme = new Post;
+$deneme->getPostList();
