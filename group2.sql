@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 08 Eyl 2021, 08:33:40
+-- Üretim Zamanı: 08 Eyl 2021, 08:36:47
 -- Sunucu sürümü: 8.0.17
 -- PHP Sürümü: 8.0.9
 
@@ -75,7 +75,7 @@ CREATE TABLE `post` (
   `title` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
   `content` text COLLATE utf8_turkish_ci NOT NULL,
   `category_id` int(11) NOT NULL,
-  `image` text COLLATE utf8_turkish_ci NOT NULL,
+  `image` text CHARACTER SET utf8 COLLATE utf8_turkish_ci,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `author_id` int(11) NOT NULL,
   `kaynak` text CHARACTER SET utf8 COLLATE utf8_turkish_ci
