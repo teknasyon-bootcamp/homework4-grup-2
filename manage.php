@@ -1,3 +1,9 @@
+<?php
+    //error_reporting(1);
+    require_once 'db.class.php';
+    require_once 'post.class.php';
+?>
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -10,14 +16,19 @@
 <body>
 
     <?php
-        //error_reporting(1);
         $action = $_GET['action'];
-        require_once 'db.class.php';
-        require_once 'post.class.php';
 
         $select = new DB;
         $post = new Post;
 
+        $post_id = 4;
+        $query = $select->connect()->prepare("SELECT * FROM post WHERE post_id=:id");
+
+        $row = $query->execute(array(
+            'id'=>$post_id
+        ));
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
 
         if (isset($_POST['create'])) {
             $title = $_POST['title'];
