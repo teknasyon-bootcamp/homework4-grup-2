@@ -21,15 +21,6 @@
         $select = new DB;
         $post = new Post;
 
-        $post_id = 4;
-        $query = $select->connect()->prepare("SELECT * FROM post WHERE post_id=:id");
-
-        $row = $query->execute(array(
-            'id'=>$post_id
-        ));
-
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-
         if (isset($_POST['create'])) {
             $title = $_POST['title'];
             $content = $_POST['content'];
@@ -78,6 +69,15 @@
         if ($action == "delete") {
             $post->delete();
         }
+
+        $post_id = 4;
+        $query = $select->connect()->prepare("SELECT * FROM post WHERE post_id=:id");
+
+        $row = $query->execute(array(
+            'id'=>$post_id
+        ));
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
     ?>
 
     <div class="container mt-5">
