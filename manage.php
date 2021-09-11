@@ -17,7 +17,7 @@
 
 
  
-   $post_id=$_GET['post_id'];
+   $post_id=$_GET['post'];
    $query=$select->connect()->prepare("SELECT * FROM post WHERE post_id=:id");
            $row=$query->execute(array(
                'id'=>$post_id
@@ -162,21 +162,21 @@ elseif($action=="edit"){
 
 <div>
     <?php if($action=="store") { ?>
-        <div class="alert alert-success d-flex align-items-center mt-5 mx-5" role="alert">
+        <div class="alert alert-success d-flex align-items-center mt-5 mx-5 w-100" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>
         <strong><?php echo  "Makaleniz başarılı bir şekilde yüklendi!"; ?></strong>
         </div>
     </div>
     <?php } else if($action=="update") { ?>
-        <div class="alert alert-success d-flex align-items-center mt-5 mx-5" role="alert">
+        <div class="alert alert-success d-flex align-items-center mt-5 mx-5 w-100" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>
         <strong><?php echo $row['title']." adlı makaleniz başarılı bir şekilde güncellendi!"; ?></strong>
     </div>
     </div>
     <?php } else if($action=="delete") { ?>
-        <div class="alert alert-success d-flex align-items-center mt-5 mx-5" role="alert">
+        <div class="alert alert-success d-flex align-items-center mt-5 mx-5 w-100" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>
         <strong><?php echo "Makaleniz başarılı bir şekilde silindi!"; ?></strong>
